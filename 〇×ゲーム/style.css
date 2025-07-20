@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+
+body {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #fce4ec, #e3f2fd); /* ピンクと水色のグラデーション */
+}
+
+h1 {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.settings {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+#difficulty {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 2px solid #ff80ab;
+    font-size: 1em;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border: none;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.cell:hover:not(.x):not(.o) {
+    background-color: #f1f8e9;
+}
+
+.cell.x, .cell.o {
+    cursor: not-allowed;
+}
+
+.cell.x::before {
+    content: '×';
+    color: #4fc3f7; /* ×を水色に */
+}
+
+.cell.o::before {
+    content: '〇';
+    color: #ff80ab; /* 〇をピンクに */
+}
+
+.status {
+    margin-top: 25px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ad1457;
+}
+
+#resetButton {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 1em;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    cursor: pointer;
+    border: none;
+    border-radius: 25px;
+    background-color: #ff80ab;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#resetButton:hover {
+    background-color: #f06292;
+    transform: translateY(-2px);
+}
